@@ -105,9 +105,10 @@ const App = () => {
 
     let timer
 
-    // 1. Manejo del Temporizador (Barra de progreso)
-    if (isPlaying && !isPaused && !finishedSlide) {
-      const duration = currentData.duration
+    // 1. Lógica de temporizador manual (SOLO si NO hay audioUrl)
+    // Esto sirve de respaldo para diapositivas sin audio
+    if (!currentData.audioUrl && isPlaying && !isPaused && !finishedSlide) {
+      const duration = currentData.duration || 5000 // Default 5s
       const intervalTime = 100
       const stepValue = (intervalTime / duration) * 100
 
@@ -128,10 +129,9 @@ const App = () => {
     // 2. Manejo del Audio Real (Play/Pause)
     if (audioRef.current) {
       if (isPaused || !isPlaying) {
-        // Pausamos si está en pausa manual O si el timer terminó (!isPlaying)
         audioRef.current.pause()
       } else if (isPlaying && currentData.audioUrl) {
-        // Intentar reproducir si tenemos URL y debe estar sonando
+        // El play se dispara, pero el progreso ahora lo maneja "onTimeUpdate" abajo
         const playPromise = audioRef.current.play()
         if (playPromise !== undefined) {
           playPromise.catch((err) =>
@@ -147,6 +147,15 @@ const App = () => {
   }, [started, isFinished, isPlaying, isPaused, finishedSlide, currentData])
 
   // --- CONTROLADORES DE EVENTOS ---
+
+  // Nuevo: Actualiza la barra de progreso basado en el tiempo real del audio
+  const handleAudioUpdate = (e) => {
+    const audio = e.currentTarget
+    if (audio.duration > 0) {
+      const percent = (audio.currentTime / audio.duration) * 100
+      setProgress(percent)
+    }
+  }
 
   const resetSlideState = () => {
     setIsPlaying(true)
@@ -493,7 +502,7 @@ const App = () => {
         />
       </main>
 
-      {/* CRUCIAL: Aquí agregamos el src para que el audio funcione */}
+      {/* CRUCIAL: Agregamos onTimeUpdate para que el progreso dependa del audio real */}
       <audio
         ref={audioRef}
         src={currentData.audioUrl}
@@ -501,6 +510,7 @@ const App = () => {
           setIsPlaying(false)
           setFinishedSlide(true)
         }}
+        onTimeUpdate={handleAudioUpdate}
         className="hidden"
       />
 
