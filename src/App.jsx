@@ -54,7 +54,7 @@ const presentationData = [
     title: '4 - El desafío de Aprendo+',
     text: 'El desafío principal fue: “La falta de diálogo y la predominancia de actividades individuales sin construcción social del conocimiento.” El diagnóstico mostró que aunque la plataforma funciona técnicamente, no promueve interacción significativa ni procesos dialógicos.',
     imageContent: '/pantalla_4.png',
-    duration: 74000,
+    duration: 80000,
     audioUrl: '/pantalla_4.mp3',
   },
   {
