@@ -21,7 +21,7 @@ const presentationData = [
     title: '1 - Introducción al trabajo',
     text: 'En la introducción del informe se explica que el objetivo general del trabajo fue “revisar cómo distintas universidades latinoamericanas utilizan Moodle en sus propuestas formativas y, a partir de ese diagnóstico, diseñar una propuesta de intervención centrada en la integración pedagógica de herramientas de Inteligencia Artificial”. Estas ideas introducen el sentido del análisis comparativo y la necesidad de un enfoque crítico aplicado.',
     imageContent: '/pantalla_1.png',
-    duration: 74000, // 35 segundos
+    duration: 75000, // 35 segundos
     audioUrl: '/pantalla_1.mp3',
   },
   {
@@ -32,7 +32,7 @@ const presentationData = [
     title: '2 - Diagnóstico UNJu vs UNAM',
     text: 'La UNJu “trabaja varios aspectos que se alinean con un enfoque dialógico”, como los foros y las tareas basadas en la realidad del estudiante. La UNAM presenta “actividades mecánicas y de evaluación cerrada” dentro de un diseño secuencial SCORM, lo que “responde a un modelo transmisivo”. La comparación evidencia cómo la misma plataforma puede sostener pedagogías totalmente diferentes.',
     imageContent: '/pantalla_2.png',
-    duration: 80000,
+    duration: 82000,
     audioUrl: '/pantalla_2.mp3',
   },
   {
@@ -43,7 +43,7 @@ const presentationData = [
     title: '3 - Uso real de IA',
     text: 'La UNJu “ya está trabajando con IA y herramientas versátiles”, especialmente H5P, capacitaciones y el asistente virtual Huma. La UNAM “ha asumido un rol de producción tecnológica”, creando el “Asistente IA para docentes”, que conecta APIs de modelos de lenguaje y genera estructuras de cursos exportables a Moodle. Estas diferencias muestran cómo cada universidad enfrenta la escala y sus necesidades pedagógicas.',
     imageContent: '/pantalla_3.png',
-    duration: 84000,
+    duration: 85000,
     audioUrl: '/pantalla_3.mp3',
   },
   {
@@ -54,7 +54,7 @@ const presentationData = [
     title: '4 - El desafío de Aprendo+',
     text: 'El desafío principal fue: “La falta de diálogo y la predominancia de actividades individuales sin construcción social del conocimiento.” El diagnóstico mostró que aunque la plataforma funciona técnicamente, no promueve interacción significativa ni procesos dialógicos.',
     imageContent: '/pantalla_4.png',
-    duration: 72000,
+    duration: 74000,
     audioUrl: '/pantalla_4.mp3',
   },
   {
@@ -65,7 +65,7 @@ const presentationData = [
     title: '5 - Módulo de intervención 5.0',
     text: 'Semana 1: reflexión personal sobre huellas digitales usando Gemini. Semana 2: producción colaborativa de un glosario crítico. Semana 3: análisis crítico con NotebookLM sin delegar la reflexión en la IA. Semana 4: producción conjunta con Canva Docs integrando todo el recorrido. El módulo transforma la experiencia desde actividades automáticas hacia una práctica crítica, social y participativa.',
     imageContent: '/pantalla_5.png',
-    duration: 113000,
+    duration: 114000,
     audioUrl: '/pantalla_5.mp3',
   },
   {
